@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Love between Us</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+
+<body>
+    <audio src="./music.mp3" autoplay="true" loop="loop"></audio>
+    <div id="back">
+        <div class="mask"></div>
+        <!-- 设置展示的图片，github pages不能有后台程序只能一条一条手动添加了 囧 -->
+        <div id="carousel"  class="carousel slide carousel-fade carousel-position">
+            <div class="carousel-inner" style="width: 100%;height: 100%;" id="background">
+                <div class="item active" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background:url(./img/1.JPG);background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/2.JPG) ;background-size: cover;"></div>
+                </div>
+             <div class="item" style="width: 100%;height: 100%;">
+                 <div style="width: 100%;height: 100%;background-image: url(./img/3.JPG) ;background-size: cover;"></div>
+             </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/4.JPG) ;background-size: cover;"></div>
+			 </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/5.JPG) ;background-size: cover;"></div>
+			 </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/6.JPG) ;background-size: cover;"></div>
+			 </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/7.JPG) ;background-size: cover;"></div>
+			 </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/8.JPG) ;background-size: cover;"></div>
+			 </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/9.JPG) ;background-size: cover;"></div>
+			 </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/10.JPG) ;background-size: cover;"></div>
+			 </div>
+			 <div class="item" style="width: 100%;height: 100%;">
+			     <div style="width: 100%;height: 100%;background-image: url(./img/11.JPG) ;background-size: cover;"></div>
+			 </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal show" style="top:24%;">
+        <div class="modal-dialog" style="opacity: .9">
+            <div class="modal-content" style="opacity:.85">
+                <div class="modal-header">
+                    <h1 class="text-center" style="color: #A94442;font-family: 'JournalRegular', Arial, sans-serif;font-size: 7rem;">the times we together</h1>
+                    <p class="text-center small-title">小儿子 & 郭大美女</p>
+                    <p class="text-center small-title">LOVING ON THE WAY</p>
+                </div>
+                <div class="modal-body text-center" style="line-height: 1.5rem;font-family: 'JournalRegular', Arial, sans-serif;font-size: 3rem;">
+                    <p>
+                        <span id="day" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span id="hour" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span id="minute" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span id="second" class="time-font"></span>
+                    </p>
+                    <p>
+                        days/hours/min/sec
+                    </p>
+                    <p class="text-center" style="color:#A94442;font-size: 17px" id="say"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/count-time.js"></script>
+    <script>
+    $(function() {
+        //设置起始日期
+        countTime('2020/08/26 21:32', 'day', 'hour', 'minute', 'second');
+        var days = $('#day').text();
+
+        // 设置标题
+        if (parseInt(days / 365) != 0) {
+            $(document).attr("title", "在一起" + parseInt(days / 365) + "年,感谢相伴。");
+        } else if (parseInt(days / 30) != 0) {
+            $(document).attr("title", "在一起" + parseInt(days / 30) + "个月,感谢相伴。");
+        } else
+            $(document).attr("title", "在一起" + days + "天,感谢相伴。");
+
+        //设置每一张图片对应的文字
+        var says = new Array(
+            "所谓人间天堂，就是有你在的每个地方",
+			"你不用改变自己，我来习惯你就可以了",
+			"海上月是天上月，眼前人是心上人。",
+			"你是一树一树的花开，是燕在梁间呢喃。你是爱，是暖，是希望，你是人间的四月天。",
+			"你走我不送你，你来无论多大风雨，我都会去接你。",
+			"你是夜不下来的黄昏，你是明不起来的清晨。",
+			"你的语调像深山流泉，你的抚摸如暮春微云。",
+			"你应该是一场梦，我应该是一阵风。",
+			"当我跨过沉沦的一切，向着永恒开战的时候，你是我的军旗。",
+			"你呼吸着阳光，我呼吸着月亮，可我们在同一的爱情中生长。",
+			"玫瑰是红的，紫罗兰是蓝的，糖是甜的，你也是",
+ 
+        );
+
+
+        var start = function() {
+            var index = 0;
+            var rate = 6000;
+            $('#say').text(says[(index++) % says.length]);
+         	var _play = function () {
+         		$('#say').hide();
+                $('#say').text(says[(index++) % says.length]);
+                $('#say').fadeToggle();
+                $('#carousel').carousel('next');
+         	};
+            setInterval(_play, rate);
+        }();
+
+    });
+    </script>
+</body>
+
+</html>
